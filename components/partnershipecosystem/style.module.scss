@@ -1,0 +1,121 @@
+@import '@styles/vars.scss';
+
+.partnershipecosystem {
+  padding-top: 25px;
+  padding-bottom: 8%;
+  background: url('./img/bg-2.jpg') no-repeat center;
+  background-size: cover;
+  position: relative;
+  h1 {
+    text-align: center;
+    color: $color-text;
+    font-weight: bold;
+    font-size: 1.7em;
+    margin-bottom: 1.5em;
+  }
+  @include m-size(md) {
+    h1 {
+      font-size: 2em;
+    }
+  }
+  @include m-size(lg) {
+    padding-top: 35px;
+  }
+  @include m-size(xl) {
+    padding-top: 40px;
+    h1 {
+      font-size: 2.2em;
+    }
+  }
+  @include m-size(xl) {
+    padding-top: 45px;
+  }
+}
+
+.gridBox {
+  .box {
+    text-align: center;
+    background-color: rgba($color: #fff, $alpha: 0.1);
+    padding: 1.5em 2em;
+    margin-bottom: 1.5em;
+    > * {
+      position: relative;
+    }
+    > .img {
+      margin: 0;
+      display: inline-block;
+      margin-bottom: 1em;
+      img {
+        height: 3.5em;
+      }
+    }
+    h4 {
+      color: $color-text;
+      font-size: 1.2em;
+      margin-bottom: 1.3em;
+    }
+    :global(.btn) {
+      display: table;
+      margin: 0 auto;
+    }
+    .imgs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      > a {
+        background-color: #fff;
+        width: 47%;
+        margin-bottom: 6%;
+        border-radius: 0.25em;
+        height: 2.5em;
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        &:before {
+          content: '';
+          position: absolute;
+          left: -3px;
+          right: -3px;
+          top: -3px;
+          bottom: -3px;
+          border-radius: 0.3em;
+          border: 1px solid #8E8E8E;
+        }
+        img {
+          max-height: 80%;
+          max-width: 80%;
+          width: auto;
+        }
+      }
+    }
+  }
+  @include m-size(md) {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    .box {
+      width: 48%;
+    }
+  }
+  @include m-size(lg) {
+    .box {
+      width: 30%;
+      position: relative;
+      &:hover:before {
+        opacity: 1;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        left: -12px;
+        right: -12px;
+        top: -12px;
+        bottom: -12px;
+        border: 1px solid $color-orange;
+        transition: opacity 0.8s ease-in-out;
+        opacity: 0;
+      }
+    }
+  }
+}

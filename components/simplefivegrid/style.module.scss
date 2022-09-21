@@ -1,0 +1,169 @@
+@import '@styles/vars.scss';
+
+.simplefivegrid {
+  padding: 25px 0;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  > figure {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    em {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &:before, &:after {
+        content: '';
+        height: 30%;
+      }
+      &:before {
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+      }
+      &:after {
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+      }
+    }
+  }
+  :global(.container) {
+    position: relative;
+  }
+  .readmore {
+    font-weight: bold;
+    color: $color-orange;
+    margin-left: 0.3em;
+    cursor: pointer;
+    transition: opacity 0.5s;
+    display: inline-block;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .content {
+    h3 {
+      color: $color-text;
+      text-align: center;
+      margin-bottom: 0.4em;
+      font-weight: bold;
+    }
+    p {
+      margin-bottom: 1.5em;
+    }
+  }
+  .grids {
+    display: flex;
+    flex-wrap: wrap;
+    .grid {
+      width: 49%;
+      margin-bottom: 1.5em;
+      margin-right: 2%;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+      .cnt {
+        padding: 0% 3%;
+        font-size: 0.9em;
+        ul {
+          margin-left: 1.5em;
+          li {
+            margin-bottom: 0.2em;
+          }
+        }
+      }
+      &:nth-child(2n) {
+        figure {
+          background-image: url('./img/Group 2168.png');
+        }
+      }
+      h5 {
+        font-weight: 800;
+        font-size: 1.15em;
+        text-align: center;
+      }
+      figure {
+        background-image: url('./img/Group 2180.png');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        color: #000;
+        margin-bottom: 1em;
+        > div {
+          position: absolute;
+          width: 100%;
+          height: 51%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 6%;
+          left: 0;
+          padding: 0px 11%;
+        }
+        &:before {
+          content: '';
+          display: block;
+          padding-bottom: 124%;
+        }
+      }
+    }
+  }
+  @include m-size(md) {
+   .grids {
+      .grid {
+        width: 32%;
+        margin-right: 2%;
+        &:nth-child(2n) {
+          margin-right: 2%;
+        }
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+    .grids {
+      .grid {
+        width: 18.4%;
+        margin-right: 2%;
+        &:nth-child(2n), &:nth-child(3) {
+          margin-right: 2%;
+        }
+        &:nth-child(5) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+  }
+  @include m-size(xl) {
+    padding: 45px 0;
+  }
+}

@@ -1,0 +1,68 @@
+@import '@styles/vars.scss';
+.thinktankContent{
+  // border:  1px solid red;
+  width: 100%;
+  height: fit-content;
+  padding: 45px 0;
+  :global(.title) {
+    font-weight: bold;
+    text-align: center;
+    color: $color-text;
+    margin-bottom: 0.7em;
+    span {
+      font-weight: normal;
+      color: $color-orange;
+    }
+  }
+  .list{
+    hr {
+      display: block;
+      margin: 2em 0;
+    }
+    .leadersList{
+      text-align: left;
+      img {
+        margin-bottom: 1em;
+      }
+      &.green {
+        h4 {
+          color: #2AB33E;
+        }
+      }
+    }
+    h4{
+      font-size: 1.4em;
+      margin-bottom: 0.7em;
+      &:nth-child( odd ){
+        color: $color-orange; 
+      }
+      &:nth-child( even ){
+        color: #2AB33E;
+      }
+    }
+  }
+  @include m-size(sm) {
+    .list {
+      .leadersList{
+        display: flex;
+        align-items: center;
+        img {
+          width: 15em;
+          margin-bottom: 0;
+        }
+        .cnt {
+          flex-grow: 1;
+          padding-left: 2em;
+        }
+      }
+    }
+  }
+  @include m-size(md) {
+    .list{
+      hr {
+        display: block;
+        margin: 3em 0;
+      }
+    }
+  }
+}

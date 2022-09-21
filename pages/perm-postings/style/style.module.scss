@@ -1,0 +1,260 @@
+@import '@styles/vars.scss';
+
+.currentopeningsview {
+  padding-bottom: 4em;
+  padding-top: 2.5em;
+  .content {
+    h3 {
+      color: $color-text;
+      font-size: 1.4em;
+      margin-bottom: 1em;
+    }
+    ul {
+      margin-bottom: 2.5em;
+      li {
+        position: relative;
+        list-style: none;
+        padding-left: 18px;
+        margin-bottom: 0.8em;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0.5em;
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          background-color: $color-text;
+        }
+      }
+    }
+    .action {
+      margin-top: 2em;
+    }
+  }
+}
+
+.boxs {
+  .box {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 2em;
+    figure {
+      width: 2.5em;
+      margin-right: 0.7em;
+      img {
+        width: 80%;
+      }
+    }
+  }
+  @include m-size(sm) {
+    .box {
+      width: 48%;
+      margin-right: 4%;
+      margin-bottom: 4%;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+  @include m-size(lg) {
+    .box {
+      width: 31.5%;
+      margin-right: 2.7%;
+      margin-bottom: 2.7%;
+      &:nth-child(2n) {
+        margin-right: 2.7%;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.liteBox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 15;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  overflow: auto;
+  animation: fadeLight 0.7s ease-in-out;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #ccc;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #242424;
+  }
+  &:before {
+    content: '';
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1em;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.7s;
+    &:hover {
+      color: $color-orange;
+    }
+  }
+  .inner {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 30px 0px;
+    width: 90%;
+    max-width: 800px;
+    padding: 2em 1.5em;
+    position: relative;
+    background-color: #242424;
+  }
+  .content {
+    position: relative;
+    text-align: left;
+  }
+}
+.inputField {
+  border: 1px solid #fff;
+  position: relative;
+  margin-bottom: 1.7em;
+  margin-top: 1em;&:focus-within {
+    border: 1px solid $color-orange;
+  }
+  label {
+    position: absolute;
+    left: 1em;
+    top: -0.8em;
+    background-color: #242424;
+    padding: 0em 0.5em;
+    pointer-events: none;
+  }
+  input, textarea, select {
+    font-family: inherit;
+    font-size: 1em;
+    color: #666666;
+    border: none;
+    background-color: #242424;
+    display: block;
+    resize: none;
+    width: 100%;
+    padding: 0.8em 1.5em 0.7em 1.5em;
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+  textarea {
+    height: 6em;
+  }
+  &.selectField {
+    &:after {
+      font-family: 'icomoon';
+      background-color: #242424;
+      content: '\e918';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1.8em;
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+    }
+  }
+}
+.formlitebox {
+  h3 {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: $color-text;
+    margin-bottom: 1em;
+  }
+  .action {
+    padding-top: 1.5em;
+  }
+  > p {
+    margin-bottom: 1.8em;
+  }
+  .checkList {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    :global(.checkbox) {
+      margin-bottom: 1.5em;
+      margin-right: 2em;
+    }
+  }
+  @include m-size(md) {
+    .formFlex {
+      display: flex;
+      flex-wrap: wrap;
+      .inputField, .inputFile {
+        width: 49%;
+        &:nth-child(2n+1) {
+          margin-right: 2%;
+        }
+      }
+    }
+  }
+}
+.inputFile {
+  position: relative;
+  border: 1px solid transparent;
+  margin-bottom: 1.7em;
+  margin-top: 1em;
+  color: $color-text;
+  &:focus-within {
+    border: 1px solid $color-orange;
+  }
+  > div {
+    padding: 0.8em 1.5em 0.7em 1.5em;
+  }
+  span {
+    color: #fff;
+    opacity: 0.57;
+    padding-left: 1.5em;
+  }
+  em {
+    font-style: normal;
+    padding-left: 1.5em;
+    opacity: 0.57;
+    color: red;
+  }
+  input {
+    opacity: 0;
+    border: none;
+    background: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+}
+
+@keyframes fadeLight {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

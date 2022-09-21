@@ -1,0 +1,303 @@
+@import '../../styles/vars.scss';
+
+.footer {
+  text-align: center;
+  .row1 {
+    background: #2f7f20 url('../../public/img/f-bg.jpg') no-repeat center;
+    background-size: cover;
+    padding: 30px 0;
+    .ftitle {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+          margin-right: 0.5em;
+        }
+      }
+    }
+    h3 {
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 0.7em;
+    }
+    p {
+      margin-bottom: 1.5em;
+    }
+    .address {
+      padding-top: 1em;
+      h5 {
+        font-size: 0.8em;
+        margin-bottom: 0.8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+          margin-right: 0.5em;
+          color: $color-text;
+        }
+      }
+      p {
+        margin-bottom: 0em;
+        font-size: 0.75em;
+      }
+      address {
+        font-style: normal;
+        p {
+          margin-bottom: 1.5em;
+        }
+      }
+    }
+    .logo {
+      width: 10em;
+      display: block;
+      margin: 0 auto 1em;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .link {
+      display: none;
+      list-style: none;
+    }
+    .share {
+      padding-top: 1.5em;
+      margin-bottom: 1.5em;
+      h3 {
+        color: $color-text;
+      }
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        a {
+          margin-right: 0.6em;
+          transition: color 0.5s;
+          &:hover {
+            color: $color-orange;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .row2 {
+    background-color: #000;
+    padding: 20px 0;
+    font-size: 0.8em;
+    > div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .link {
+      margin-bottom: 1em;
+      a {
+        transition: color 0.5s;
+        &:hover {
+          color: $color-orange;
+        }
+      }
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    .hgp {
+      display: inline-flex;
+      align-items: center;
+      img {
+        width: 3em;
+        margin-right: 1em;
+      }
+    }
+  }
+  @include m-size(md) {
+    :global(.container) {
+      width: 85%;
+    }
+    .row1 {
+      text-align: left;
+      h3 {
+        margin-bottom: 1em;
+      }
+      .logo {
+        margin: 0 0 1em 0;
+      }
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        > div {
+          width: 45%;
+        }
+      }
+      .share {
+        > div {
+          justify-content: flex-start;
+        }
+      }
+      .link {
+        display: block;
+        margin-bottom: 2em;
+        li {
+          display: flex;
+          align-items: center;
+          font-size: 0.75em;
+          margin-bottom: 1em;
+          &:before {
+            content: "\e902";
+            font-family: 'icomoon' !important;
+            color: $color-text;
+            font-size: 0.5em;
+            margin-right: 1em;
+          }
+        }
+      }
+      .ftitle {
+        a {
+          justify-content: flex-start;
+        }
+      }
+      .address {
+        p {
+          margin-left: 2.5em;
+        }
+        h3 {
+          i {
+            width: 1.5em;
+            text-align: right;
+            margin-right: 0.4em;        
+          }
+        }
+        h5 {
+          justify-content: flex-start;
+          i {
+            width: 1.7em;
+            text-align: right;
+            margin-right: 0.7em;
+          }
+        }
+      }
+    }
+  }
+  @include m-size(md) {
+    .row2 {
+      > div {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .link {
+        margin-bottom: 0;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include m-size(lg) {
+    .row1 {
+      padding: 50px 0 30px 0;
+      > div {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        > div {
+          padding-right: 1em;
+          width: auto;
+          min-width: 15%;
+          order: 1;
+          &:first-child {
+            order: 2;
+          }
+          &.col1 {
+            padding-right: 0;
+          }
+        }
+        .col1 {
+          p {
+            font-size: 0.9em;
+          }
+        }
+        .address {
+          max-width: 290px;
+        }
+      }
+      .link {
+        li {
+          transition: transform 0.4s;
+          a {
+            transition: color 0.4s;
+          }
+          &:hover {
+            transform: translateX(8px);
+            a {
+              color: $color-text;
+            }
+          }
+        }
+      }
+      .ftitle {
+        a {
+          transition: color 0.4s;
+          i {
+            transition: color 0.4s;
+          }
+          &:hover {
+            color: $color-text;
+            i {
+              color: $color-orange;
+            }
+          }
+        }
+      }
+    }
+  }
+  .FollowCompany {
+    position: relative;
+  }
+}
+.linkedinWid {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  margin-top: 55px;
+  z-index: 8;
+  &:hover {
+    i {
+      width: 95px;
+    }
+    .widgetIn {
+      top: 100%;
+      opacity: 1;
+      transition: top 0.5s, opacity 0.5s;
+      transition-delay: 0.3s;
+    }
+  }
+  i {
+    background-color: #0077b5;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s;
+    position: relative;
+    z-index: 1;
+  }
+  .widgetIn {
+    background-color: #fff;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    opacity: 0;
+    padding: 13px 7px;
+    width: 95px;
+    transition: top 0.1s, opacity 0.1s;
+  }
+}

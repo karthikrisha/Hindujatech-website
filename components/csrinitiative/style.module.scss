@@ -1,0 +1,273 @@
+@import '../../styles/vars.scss';
+
+.csrinitiative {
+  padding-top: 40px;
+  position: relative;
+  .figures {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 150%;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .figure {
+    position: absolute;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &.figure1 {
+      left: 0%;
+      top: -12%;
+      width: 70px;
+      &:after {
+        background: url(./img/mask-1-border.svg) no-repeat center;
+        background-size: contain;
+      }
+      &:before {
+        content: '';
+        padding-bottom: 96%;
+        display: block;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        mask: url(./img/mask-1.svg);
+        mask-size: cover;
+      }
+    }
+    &.figure2 {
+      left: 63px;
+      top: -16px;
+      width: 52px;
+      &:after {
+        background: url(./img/mask-2-border.svg) no-repeat center;
+        background-size: contain;
+      }
+      &:before {
+        content: '';
+        padding-bottom: 99%;
+        display: block;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        mask: url(./img/mask-2.svg);
+        mask-size: cover;
+      }
+    }
+    &.figure3 {
+      right: 0%;
+      top: -3%;
+      width: 70px;
+      &:after {
+        background: url(./img/mask-2-border.svg) no-repeat center;
+        background-size: contain;
+      }
+      &:before {
+        content: '';
+        padding-bottom: 99%;
+        display: block;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        mask: url(./img/mask-2.svg);
+        mask-size: cover;
+      }
+    }
+    &.figure4 {
+      right: 0%;
+      top: 42%;
+      width: 50px;
+      &:after {
+        background: url(./img/mask-4-border.svg) no-repeat center;
+        background-size: contain;
+      }
+      &:before {
+        content: '';
+        padding-bottom: 114%;
+        display: block;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        mask: url(./img/mask-4.svg);
+        mask-size: cover;
+      }
+    }
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    color: $color-yellow;
+    margin-bottom: 0.3em;
+    font-weight: 400;
+  }
+  p {
+    font-size: 1em;
+    strong {
+      font-size: 1.4em;
+    }
+    em {
+      color: #edab1f;
+    }
+  }
+  .wrap {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 540px;
+  }
+  .row1 {
+    text-align: center;
+    padding-bottom: 25px;
+    p {
+      font-size: 0.8em;
+    }
+  }
+  .row2 {
+    background-color: #313131;
+    padding: 20px 0;
+  }
+  .twq {
+    position: relative;
+    padding: 15px 30px;
+    display: table;
+    margin: auto;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background-color: $color-orange2;
+      width: 120px;
+    }
+    &:before {
+      left: 0;
+      top: 0;
+    }
+    &:after {
+      right: 0;
+      bottom: 0;
+    }
+    em {
+      &:before, &:after {
+        content: '';
+        position: absolute;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: 28px solid $color-orange2;
+        border-right: 28px solid transparent;
+      }
+      &:after {
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 28px solid $color-orange2;
+        border-left: 28px solid transparent;
+      }
+    }
+  }
+  @include m-size(md) {
+    background-size: auto 100%;
+    .content {
+      margin-left: 42%;
+    }
+    .figure {
+      &.figure1 {
+        left: -48px;
+        top: 4px;
+        width: 170px;
+      }
+      &.figure2 {
+        left: -18px;
+        top: 135px;
+        width: 110px;
+      }
+      &.figure3 {
+        right: -10px;
+        top: 8px;
+        width: 150px;
+      }
+      &.figure4 {
+        right: -35px;
+        top: 92px;
+        width: 150px;
+      }
+    }
+  }
+  @include m-size(lg) {
+    padding-top: 50px;
+    h3 {
+      font-size: 2em;
+    }
+    .figure {
+      &.figure1 {
+        left: -60px;
+        top: 5px;
+        width: 260px;
+      }
+      &.figure2 {
+        left: -20px;
+        top: 189px;
+        width: 170px;
+      }
+      &.figure3 {
+        right: -23px;
+        top: 5px;
+        width: 260px;
+      }
+      &.figure4 {
+        right: -35px;
+        top: 145px;
+        width: 232px;
+      }
+    }
+    .twq {
+      padding: 20px 60px;
+      &:before, &:after {
+        width: 190px;
+      }
+      em {
+        &:before {
+          border-top: 58px solid $color-orange2;
+          border-right: 52px solid transparent;
+        }
+        &:after {
+          border-bottom: 58px solid $color-orange2;
+          border-left: 52px solid transparent;
+        }
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding-top: 70px;
+  }
+}

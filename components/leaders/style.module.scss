@@ -1,0 +1,325 @@
+@import '@styles/vars.scss';
+
+.banner {
+  .childInPos {
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 115%;
+    }
+  }
+  :global(.container) {
+    max-width: 715px;
+  }
+  .video, .image {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 60%;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+    }
+    video, img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: fadeIn 1s linear;
+    }
+  }
+  .content {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 37%;
+    text-align: center;
+    h1 {
+      color: $color-text;
+      font-weight: bold;
+      font-size: 1.7em;
+      margin-bottom: 0.1em;
+      small {
+        display: block;
+        color: #fff;
+        font-weight: normal;
+        font-size: 0.57em;
+        span {
+          color: red;
+        }
+      }
+    }
+    p {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+  &.inner {
+    .childInPos {
+      &:before {
+        padding-bottom: 70%;
+      }
+    }
+    .content {
+      top: 50%;
+      transform: translateY(-20%);
+    }
+  }
+  @include m-size(sm) {
+    .childInPos {
+      &:before {
+        padding-bottom: 80%;
+      }
+    }
+  }
+  @include m-size(md) {
+    .content {
+      h1 {
+        font-size: 2em;
+      }
+    }
+  }
+  @include m-size(lg) {
+    .childInPos {
+      max-height: 920px;
+      &:before {
+        padding-bottom: 48%;
+      }
+    }
+    &.inner {
+      .childInPos {
+        max-height: 530px;
+        &:before {
+          padding-bottom: 37%;
+        }
+      }
+    }
+  }
+  @include m-size(xl) {
+    .content {
+      h1 {
+        font-size: 2.2em;
+      }
+    }
+  }
+}
+.ourLeadersList {
+  background-size: 100% auto;
+  background: url(./img/bg.jpg) repeat-y center;
+}
+.boxs {
+  padding: 30px 0;
+  .box {
+    margin-bottom: 2em;
+  }
+  .title {
+    background-color: rgba($color: #FFF, $alpha: 0.13);
+    padding: 0.6em;
+    margin-left: 3em;
+    border-radius: 5em;
+    .titleWrap {
+      display: flex;
+      align-items: center;
+      position: relative;
+      border-radius: 5em;
+      padding: 2em 1em 2em 4em;
+    }
+    .flexWrap {
+      flex-grow: 1;
+      .right {
+        display: inline-flex;
+        align-items: center;
+        padding-top: 1em;
+      }
+    }
+    h3 {
+      color: $color-orange;
+      margin-bottom: 0.1em;
+      font-size: 1.5em;
+    }
+    .link {
+      width: 3em;
+      height: 3em;
+      min-width: 3em;
+      min-height: 3em;
+      border: 0.3em solid #707070;
+      color: #C2C2C2;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3em;
+      display: inline-flex;
+      transition: color 0.5s, border-color 0.5s;
+      &:hover {
+        border-color: $color-orange;
+        color: $color-text;
+      }
+      i {
+        font-size: 1.2em;
+      }
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      margin-right: 1.3em;
+      i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: url(./img/btn-shape.svg) no-repeat center;
+        background-size: contain;
+        width: 2.2em;
+        height: 2em;
+        font-size: 1.2em;
+        position: relative;
+      }
+      em {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: url(./img/btn-border.svg) no-repeat center right;
+        background-size: auto 100%;
+        width: 100%;
+        height: 100%;
+      }
+      span {
+        position: relative;
+        padding: 0em 1.2em 0em 0.8em;
+        color: $color-text;
+        white-space: nowrap;
+      }
+    }
+    figure {
+      position: absolute;
+      left: -3.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 7em;
+      &:before {
+        background: url(./img/bg.svg) no-repeat center;
+        background-size: contain;
+        content: '';
+        display: block;
+        padding-bottom: 86%;
+        opacity: 0.4;
+        transition: opacity 0.5s;
+      }
+      span {
+        position: absolute;
+        left: 47%;
+        top: 50%;
+        width: 78%;
+        height: 86%;
+        transform: translate(-50%, -50%);
+      }
+      img {
+        mask: url(./img/mask.svg);
+        mask-size: 100% 100%;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .content {
+    background: #C2C2C2;
+    color: #000;
+    padding: 1.5em 2em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    position: relative;
+    > i {
+      position: absolute;
+      width: 1.5em;
+      height: 1.5em;
+      &.left {
+        left: -0.75em;
+        top: -0.75em;
+        border-left: 2px solid $color-orange;
+        border-top: 2px solid $color-orange;
+      }
+      &.right {
+        right: -0.75em;
+        bottom: -0.75em;
+        border-right: 2px solid $color-orange;
+        border-bottom: 2px solid $color-orange;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: 2.4em;
+      bottom: 100%;
+      width: 0;
+      height: 0;
+      border-left: 0.7em solid transparent;
+      border-right: 0.7em solid transparent;
+      border-bottom: 1.2em solid $color-orange;
+    }
+    p {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include m-size(md) {
+    padding: 40px 0;
+    .flexWrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  @include m-size(xl) {
+    padding: 50px 0;
+    .content {
+      margin-top: 4em;
+      &:before {
+        left: 7em;
+      }
+    }
+    .box {
+      margin-bottom: 5.5em;
+    }
+    .title {
+      margin-left: 7.5em;
+      figure {
+        left: -7.5em;
+        width: 15em;
+      }
+      .titleWrap {
+        padding: 2em 5em 2em 10em;
+        transition: background-color 0.5s;
+      }
+      &:hover {
+        .titleWrap {
+          background-color: rgba($color: #FFF, $alpha: 0.09);
+        }
+        figure:before {
+          opacity: 1;
+        }
+      }
+    }
+    .btn {
+      em, span {
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+      &:hover {
+        em, span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

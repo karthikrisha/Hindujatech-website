@@ -1,0 +1,146 @@
+@import '@styles/vars.scss';
+
+.virtualSoftware {
+  padding: 25px 0;
+  background: #1f2022 url('./img/bg.jpg') no-repeat center;
+  background-size: cover;
+  h3 {
+    color: $color-text;
+    text-align: center;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+  }
+  .list {
+    position: relative;
+    figure {
+      margin: 0;
+      width: 100%;
+      position: relative;
+      transition: background-color 0.7s ease-in-out;
+      background-color: transparent;
+      &:hover {
+        background-color: #fff;
+        img {
+          opacity: 0;
+          &:last-child {
+            opacity: 1;
+          }
+        }
+      }
+      a {
+        display: block;
+      }
+      img {
+        display: block;
+        width: 100%;
+        transition: opacity 0.7s ease-in-out;
+        &:last-child {
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+  :global(.swiper-slide) {
+    align-items: center;
+    display: inline-flex;
+    padding: 0.5em;
+    height: auto;
+    a {
+      display: block;
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  :global(.swiper-button-next), 
+  :global(.swiper-button-prev) {
+    color: #fff;
+    font-size: 1.7em;
+  }
+  :global(.swiper-button-next) {
+    right: -0.7em;
+    &:before {
+      content: "\e916";
+      content: "\e914";
+    }
+  }
+  :global(.swiper-button-prev) {
+    left: -10.7em;
+    &:before {
+      content: "\e917";
+      content: "\e915";
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+    :global(.swiper-button-next), :global(.swiper-button-prev) {
+      font-size: 6em;
+      display: flex;
+      align-items: center;
+      &:before, &:after {
+        font-weight: 100;
+      }
+      &:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+    :global(.swiper-button-next) {
+      right: -0.5em;
+      &:before, &:after {
+        content: "\e916";
+        backface-visibility: hidden;
+      }
+      &:before {
+        animation: nextBefore 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+        animation-iteration-count: infinite;
+      }
+      &:after {
+        animation: nextAfter 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+        animation-iteration-count: infinite;
+      }
+    }
+    :global(.swiper-button-prev) {
+      left: -0.5em;
+      &:before, &:after {
+        content: "\e917";
+        backface-visibility: hidden;
+      }
+      &:before {
+        animation: prevBefore 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+        animation-iteration-count: infinite;
+      }
+      &:after {
+        animation: prevAfter 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding: 45px 0;
+  }
+}
+@keyframes prevAfter {
+  0% { transform: translateX(40%);opacity: 0; }
+  50%, 100% { transform: translateX(0%);opacity: 1; }
+}
+@keyframes prevBefore {
+  0% { transform: translateX(0%);opacity: 1; }
+  50%, 100% { transform: translateX(-40%);opacity: 0; }
+}
+@keyframes nextAfter {
+  0% { transform: translateX(-40%);opacity: 0; }
+  50%, 100% { transform: translateX(0%);opacity: 1; }
+}
+@keyframes nextBefore {
+  0% { transform: translateX(0%);opacity: 1; }
+  50%, 100% { transform: translateX(40%);opacity: 0; }
+}

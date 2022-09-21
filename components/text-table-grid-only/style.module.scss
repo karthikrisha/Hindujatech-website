@@ -1,0 +1,89 @@
+@import '@styles/vars.scss';
+
+.Texttablegridonly {
+  padding: 25px 0;
+  text-align: center;
+  h3 {
+    color: $color-text;
+    margin-bottom: 0.4em;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 1.4em;
+  }
+  .grids {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .grid {
+      margin: 0em 0.6em 0.6em 0.6em;
+      width: 90%;
+      h5 {
+        margin-bottom: 0.5em;
+      }
+      h5, h6 {
+        font-size: 1em;
+        color: $color-text;
+        background-color: $color-lite-dark;
+        padding: 0.4em;
+      }
+      h6 {
+        min-height: 3.5em;
+      }
+      .cnt {
+        background-color: #1a1a1a;
+        padding: 1em;
+        text-align: left;
+        ul, ol {
+          margin-left: 1.5em;
+          li {
+            margin-bottom: 0.5em;
+          }
+        }
+      }
+      figure {
+        padding: 1.5em 1em;
+        background-color: #1a1a1a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 12.0em;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  @include m-size(sm) {
+    .grids {
+      .grid {
+        width: 45%;
+      }
+    }
+  }
+  @include m-size(md) {
+    .grids {
+      padding-top: 1.5em;
+      .grid {
+        width: 30%;
+        .cnt {
+          min-height: 14.5em;
+        }
+      }
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+    .grids {
+      .grid {
+        width: 22%;
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+  }
+  @include m-size(xl) {
+    padding: 45px 0;
+  }
+}

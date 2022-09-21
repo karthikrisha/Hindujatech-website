@@ -1,0 +1,379 @@
+@import '@styles/vars.scss';
+
+.ecoengine {
+  .overlayEco {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    pointer-events: none;
+    z-index: 9;
+  }
+  .overlayBlackEco {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .ecoengineBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 8;
+    :global(.title) {
+      color: #fff;
+    }
+    .rangeslider {
+      display: flex;
+      align-items: center;
+      margin: -0.5em 0px 2em 40px;
+      img {
+        width: 18px;
+      }
+      input {
+        margin: 0px 10px;
+        width: 75%;
+      }
+      input[type=range]{
+        -webkit-appearance: none;
+      }
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 300px;
+        height: 4px;
+        background: #ddd;
+        border: none;
+        border-radius: 7px;
+      }
+    
+      input[type=range]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          border: none;
+          height: 16px;
+          width: 16px;
+          border-radius: 50%;
+          background: $color-orange;
+          margin-top: -6px;
+      }
+      
+      input[type=range]:focus {
+          outline: none;
+      }
+      
+      input[type=range]:focus::-webkit-slider-runnable-track {
+          background: #ccc;
+      }
+    }
+    h3 {
+      color: $color-orange;
+      margin-bottom: 0.3em;
+      font-weight: 800;
+      font-size: 2em;
+    }
+    :global(.icon-close-2) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 1em;
+      font-size: 1.3em;
+      cursor: pointer;
+    }
+    p {
+      margin-bottom: 2em;
+      color: #f2f2ea;
+      span {
+        display: block;
+        color: #FDCB85;
+        font-weight: 800;
+      }
+    }
+    h4 {
+      font-size: 1.3em;
+      font-weight: 800;
+      margin-bottom: 5px;
+      font-style: italic;
+    }
+    .pt2 {
+      color: #00FF34;
+      //text-shadow: 0.1em 0.1em 0em #1e6b25;
+    }
+    .pt3 {
+      color: #F0D257;
+      //text-shadow: 0.1em 0.1em 0em #8c8115;
+    }
+    .box {
+      border: 1px solid #707070;
+      padding: 0.7em 1em;
+      margin-bottom: 1.2em;
+      p {
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+    .checkenergy {
+      width: 80px;
+      height: 26px;
+      position: relative;
+      margin-top: -1em;
+      margin-left: 40px;
+      color: #fff;
+      .slide {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 10px;
+        height: 100%;
+        font-size: 14px;
+        position: relative;
+        background: linear-gradient(to right, #eb655c 0%,#c50000 100%);
+        border-radius: 50px;
+        label {
+          content: '';
+          width: 34px;
+          height: 20px;
+          cursor: pointer;
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          z-index: 1;
+          background: #fff;
+          border-radius: 50px;
+          transition: all 0.15s ease;
+        }
+        span {
+          line-height: 1;
+        }
+      }
+      input[type="checkbox"]:checked + .slide {
+        background: linear-gradient(to right, #126a02 0%,#3ddd25 100%);
+      }
+      input[type="checkbox"]:checked + .slide label {
+        left: 43px;
+      }
+      input {
+        display: none;
+      }
+    }
+    .icon {
+      position: relative;
+      padding-left: 40px;
+      img {
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 18px;
+      }
+    }
+    figure {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        //background-color: rgba($color: #000000, $alpha: 0.4);
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .scrollPage {
+      overflow: auto;
+      height: 100vh;
+      .wrap {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+    }
+    .content {
+      position: relative;
+      text-align: left;
+      max-width: 525px;
+      padding: 30px 15px 30px 15px;
+      margin-top: 80px;
+      @include m-size(sm) {
+        padding-left: 60px;
+      }
+    }
+  }
+  .ecoenginebar {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 100%;
+    color: #fefffd;
+    .message {
+      font-size: 1.3em;
+      text-transform: none;
+      overflow: hidden;
+      position: absolute;
+      bottom: 100%;
+      left: 30px;
+      width: 120%;
+      padding-bottom: 15px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 9%;
+        bottom: 0%;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 16px solid #0c3902;
+      }
+    }
+    .messagein {
+        padding: 10px 20px;
+        background: #0c3902;
+        border-radius: 10px;
+    }
+    h4 {
+      margin-bottom: 3px;
+    }
+    p {
+      font-weight: normal;
+      padding: 0px;
+      margin: 0px;
+    }
+    .iconWrap {
+      position: absolute;
+      left: 100%;
+      bottom: 0;
+      display: flex;
+      background: linear-gradient(to bottom, #2c7a02 0%,#589200 100%); 
+      border-radius: 0px 10px 10px 0px;
+      padding-left: 30px;
+      margin-left: -30px;
+      max-width: 0px;
+      visibility: hidden;
+    }
+    .ecoicons {
+      height: 5em;
+      width: 8em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover i {
+        color: #0c3902;
+      }
+      &:last-child i {
+        border-right: none;
+      }
+      i {
+        font-size: 1.7em;
+        width: 100%;
+        text-align: center;
+        border-right: 1px solid #99cc67;
+        padding: 0.3em 0;
+        transition: color 0.4s;
+      }
+    }
+    .ecobutton {
+      text-align: center;
+      background: url('./img/ESave_Icon.svg') no-repeat center;
+      background-size: contain;
+      cursor: pointer;
+      position: relative;
+      &:after {
+        content: '';
+        padding-bottom: 85%;
+        display: block;
+      }
+    }
+    .ecoicon5 .message:after {
+      left: 34%;
+    }
+    .ecoicon3 .message:after {
+      left: 58%;
+    }
+    &:hover .iconWrap {
+      max-width: 400px;
+      visibility: visible;
+      transition: max-width 0.5s;
+    }
+    .ecoicons:hover .message {
+      opacity: 1;
+    }
+  }
+  .sdwd1 {
+      position: fixed;
+      left: 15px;
+      width: 60px;
+      z-index: 8;
+      cursor: pointer;
+      bottom: 10px;
+  }
+  .esIcon {
+    &:hover + .esDes {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+  }
+  .esDes {
+    position: absolute;
+    left: 100%;
+    top: 5px;
+    margin-left: 25px;
+    background-color: #15b551;
+    color: #fff;
+    padding: 10px;
+    font-size: 13px;
+    width: 200px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s, transform 0.4s;
+    transform: translateX(30%);
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 20px solid #15b551;
+      border-left: 20px solid transparent;
+      position: absolute;
+      right: 100%;
+      top: 0%;
+    }
+  }
+  @include m-size(sm) {
+    
+  }
+  @include m-size(md) {
+    .sdwd1 {
+      width: 80px;
+    }
+    .esDes {
+      width: 300px;
+      font-size: 14px;
+    }
+  }
+  @include m-size(l) {
+    .sdwd1 {
+      width: 100px;
+    }
+  }
+  @include m-size(xxl) {
+    
+  }
+}

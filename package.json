@@ -1,0 +1,46 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 5000",
+    "build": "next build",
+    "start": "next start -p 5001",
+    "postbuild": "next-sitemap --config next-sitemap.config.js"
+  },
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.55",
+    "@speechly/speech-recognition-polyfill": "^1.0.0",
+    "axios": "^0.21.1",
+    "dateformat": "^4.5.1",
+    "formidable": "^1.2.2",
+    "next": "11.0.0",
+    "next-auth": "^3.27.0",
+    "next-sitemap": "^1.6.140",
+    "next-videos": "1.4.0",
+    "nodemailer": "^6.6.3",
+    "nprogress": "^0.2.0",
+    "ramda": "^0.27.1",
+    "react": "17.0.2",
+    "react-cookie-consent": "^6.3.0",
+    "react-cool-inview": "^2.0.7",
+    "react-countup": "^4.3.3",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "17.0.2",
+    "react-google-recaptcha": "^2.1.0",
+    "react-hook-form": "^7.11.1",
+    "react-hotjar": "^4.0.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-markdown": "^6.0.2",
+    "react-particles-js": "^3.4.1",
+    "react-speech-recognition": "^3.8.2",
+    "react-toastify": "^7.0.4",
+    "regenerator-runtime": "^0.13.7",
+    "sass": "~1.35.1",
+    "swiper": "^6.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.11",
+    "typescript": "^4.3.4"
+  }
+}

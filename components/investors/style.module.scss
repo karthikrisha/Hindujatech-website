@@ -1,0 +1,229 @@
+@import '@styles/vars.scss';
+
+.brochures {
+  padding: 14% 0% 4% 0%;
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  :global(.container) {
+    position: relative;
+  }
+}
+.brochuresWrap {
+  color: #ccc;
+  > h1 {
+    text-align: center;
+    color: $color-text;
+    margin-bottom: 1.7em;
+  }
+  > p {
+    text-align: center;
+    margin-bottom: 1.8em;
+  }
+}
+.tabs {
+  display: flex;
+  font-weight: bold;
+  position: relative;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  overflow: auto;
+  @include m-size(lg) {
+    overflow: initial;
+  }
+  span {
+    white-space: nowrap;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0.6em 0.5em;
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+    transition: color 0.7s, background-color 0.7s;
+    background-color: #3E3E3E;
+    flex-grow: 1;
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+      background-color: $color-text;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      height: 3px;
+      margin-top: 4px;
+      background-color: $color-orange;
+      width: 100%;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    &:hover {
+      color: #000;
+      background-color: $color-text;
+    }
+    &.active {
+      color: #000;
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+.filter {
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: flex-end;
+  .filtercheck {
+    display: inline-flex;
+    align-items: center;
+    flex-grow: 1;
+    :global(.checkbox) {
+      margin-right: 2em;
+    }
+  }
+  .filterSearch {
+    position: relative;
+    width: 300px;
+    button {
+      border: none;
+      background: none;
+      color: #fff;
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 0.8em;
+      padding: 0.7em;
+      cursor: pointer;
+    }
+    input {
+      background: #3E3E3E;
+      color: #fff;
+      border: none;
+      display: block;
+      width: 100%;
+      padding: 0.4em 1em;
+      border-radius: 1.1em;
+      &:focus, &:active {
+        outline: none;
+      }
+    }
+  }
+}
+
+.listGrid {
+  display: flex;
+  flex-wrap: wrap;
+  .grid {
+    background-color: #2e2e2e;
+    position: relative;
+    width: 100%;
+    margin-bottom: 35px;
+    color: #fff;
+    transition: background-color 0.7s;
+    &:hover {
+      background-color: #fc8701;
+      &:before {
+        border-color: #318014;
+      }
+      .cnt {
+        i {
+          background-color: #fff;
+          &:before {
+            border-right-color: #fff;
+          }
+          svg {
+            fill: #318014;
+          }
+        }
+      }
+    }
+    .cnt {
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        font-weight: 400;
+        font-size: 1em;
+        padding: 0.8em;
+      }
+      i {
+        background-color: #d5d5d5;
+        min-width: 3.7em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: background-color 0.7s;
+        &:before {
+          content: '';
+          position: absolute;
+          right: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0;
+          height: 0;
+          border-top: 8px solid transparent;
+          border-right: 9px solid #d5d5d5;
+          border-bottom: 8px solid transparent;
+          transition: border-color 0.7s;
+        }
+        svg {
+          width: 50%;
+          fill: #a4a4a4;
+          display: block;
+          transition: fill 0.7s;
+        }
+      }
+    }
+    .link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: -8px;
+      bottom: -8px;
+      right: -8px;
+      border: 2px solid #2e2e2e;
+      transition: border-color 0.7s;
+    }
+  }
+  @include m-size(md) {
+    .grid {
+      width: 47.6%;
+      margin-right: 4%;
+      margin-bottom: 5%;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+  @include m-size(lg) {
+    .grid {
+      width: 30.4%;
+      margin-right: 4%;
+      margin-bottom: 4%;
+      &:nth-child(2n) {
+        margin-right: 4%;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,268 @@
+@import '@styles/vars.scss';
+
+.solutions {
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    canvas, video {
+      animation: fadeIn2 1s linear;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    video {
+      object-fit: cover;
+      opacity: 0.2;
+    }
+    em {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: rgba(0,0,0,0.1);
+      backdrop-filter: blur(1.2px);
+      &:before, &:after {
+        content: '';
+        height: 20%;
+      }
+      &:before {
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+      }
+      &:after {
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+      }
+    }
+  }
+  :global(.container) {
+    position: relative;
+  }
+  .content {
+    h3 {
+      color: $color-text;
+      margin-bottom: 0.4em;
+    }
+    p {
+      font-size: 1.2em;
+      span {
+        color: $color-text;
+      }
+    }
+  }
+  .image {
+    position: relative;
+    max-width: 600px;
+    width: 70%;
+    margin-bottom: 1em;
+    h4 {
+      color: #fff;
+      font-size: 1.1em;
+      position: absolute;
+      left: 15%;
+      top: 0%;
+      overflow: hidden;
+      padding: 0.3em 1.2em 0.3em 0.5em;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-blue;
+        transform: skewX(-13deg);
+        transform-origin: right top;
+      }
+      span {
+        display: block;
+        position: relative;
+      }
+    }
+    &:before {
+      content: '';
+      padding-bottom: 86.6%;
+      display: block;
+    }
+    figure {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 13%;
+        top: 7%;
+        bottom: 7%;
+        width: 100%;
+        background: url(./img/shape-1.svg) no-repeat center;
+        background-size: contain;
+      }
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        mask: url(./img/Hexagon.svg);
+        mask-size: cover;
+      }
+    }
+  }
+  .box {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  :global(.swiper-button-next) {
+    right: 20px;
+    &:before, &:after {
+      content: "\e916";
+    }
+    &:before {
+      animation: nextBefore 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+      animation-iteration-count: infinite;
+    }
+    &:after {
+      animation: nextAfter 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+      animation-iteration-count: infinite;
+    }
+  }
+  :global(.swiper-button-prev) {
+    left: 20px;
+    &:before, &:after {
+      content: "\e917";
+    }
+    &:before {
+      animation: prevBefore 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+      animation-iteration-count: infinite;
+    }
+    &:after {
+      animation: prevAfter 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+      animation-iteration-count: infinite;
+    }
+  }
+  :global(.swiper-button-next), :global(.swiper-button-prev) {
+    top: 34%;
+    display: flex;
+    align-items: center;
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &:before, &:after {
+      font-weight: 100;
+    }
+  }
+  .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1em;
+    a:first-child {
+      margin-right: 1em;
+    }
+  }
+  @include m-size(xmd) {
+    .content {
+      padding: 0px 20px;
+    }
+    :global(.container) {
+      width: 100%;
+    }
+  }
+  @include m-size(md) {
+    padding: 40px 0;
+    text-align: left;
+    :global(.swiper-button-next), :global(.swiper-button-prev) {
+      top: 50%;
+    }
+    :global(.swiper-button-prev) {
+      left: 25px;
+    }
+    :global(.swiper-button-next) {
+      right: 25px;
+    }
+    :global(.swiper-slide) {
+      padding: 0px 50px;
+    }
+    .action {
+      justify-content: flex-start;
+    }
+    .box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .content {
+      width: 50%;
+      padding-right: 10%;
+      p {
+        font-size: 1.5em;
+      }
+    }
+    .image {
+      width: 40%;
+    }
+  }
+  @include m-size(xl) {
+    padding: 50px 0;
+    .content {
+      width: 45%;
+      padding-right: 3em;
+      padding-left: 5em;
+      p {
+        font-size: 1.3em;
+      }
+    }
+    :global(.swiper-button-prev), :global(.swiper-button-next) {
+      font-size: 6em;
+    }
+    .image {
+      width: calc(55% - 5em);
+    }
+  }
+  @media only screen and (min-width: 1500px) {
+    .content {
+      
+    }
+  }
+  @include m-size(xxxl) {
+    padding: 70px 0;
+  }
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 0.2; }
+}
+@keyframes prevAfter {
+  0% { transform: translateX(40%);opacity: 0; }
+  50%, 100% { transform: translateX(0%);opacity: 1; }
+}
+@keyframes prevBefore {
+  0% { transform: translateX(0%);opacity: 1; }
+  50%, 100% { transform: translateX(-40%);opacity: 0; }
+}
+@keyframes nextAfter {
+  0% { transform: translateX(-40%);opacity: 0; }
+  50%, 100% { transform: translateX(0%);opacity: 1; }
+}
+@keyframes nextBefore {
+  0% { transform: translateX(0%);opacity: 1; }
+  50%, 100% { transform: translateX(40%);opacity: 0; }
+}

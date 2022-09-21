@@ -1,0 +1,180 @@
+@import '@styles/vars.scss';
+
+.practiceheadprofile {
+  padding: 25px 0;
+  position: relative;
+  .splite {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      position: absolute;
+      background-color: #fff;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      &:before, &:after {
+        content: '';
+        width: 5px;
+        height: 5px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+      }
+    }
+    em {
+      // width: 40px;
+      // height: 40px;
+      // background: url(./img/Linkedin_icon.png) no-repeat center;
+      // background-size: contain;
+      background-color: #000;
+      display: block;
+      position: relative;
+      width: 3em;
+      height: 3em;
+      min-width: 3em;
+      min-height: 3em;
+      border: 0.3em solid #707070;
+      color: #C2C2C2;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3em;
+      display: inline-flex;
+      transition: color 0.5s, border-color 0.5s;
+      &:hover {
+        border-color: $color-orange;
+        color: $color-text;
+      }
+      i {
+        font-size: 1.2em;
+      }
+    }
+  }
+  .profile {
+    max-width: 460px;
+    width: 100%;
+    margin: 0 auto 20px;
+    position: relative;
+    background: url(./img/bg.png) no-repeat center;
+    background-size: contain;
+    &:before {
+      content: '';
+      padding-bottom: 86.6%;
+      display: block;
+    }
+  }
+  figure {
+    position: absolute;
+    left: 9%;
+    top: 3%;
+    width: 82%;
+    height: 82%;
+    &:before {
+      content: '';
+      padding-bottom: 86.6%;
+      display: block;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: -4.3%;
+      top: -4.3%;
+      width: 108%;
+      height: 108%;
+      background: url('./img/hexagon-border.svg') no-repeat center;
+      background-size: contain;
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      mask: url(./img/Hexagon.svg);
+      mask-size: cover;
+    }
+  }
+  .cnt {
+    text-align: center;
+    padding-top: 30px;
+    h2 {
+      font-weight: 100;
+      font-size: 2em;
+      margin-bottom: 5px;
+      color: $color-orange;
+      line-height: 1;
+    }
+    h3 {
+      color: #fff;
+      font-weight: 100;
+      font-size: 1.5em;
+      margin-bottom: 0.7em;
+    }
+  }
+  @include m-size(maxlg) {
+    .splite {
+      height: 100px;
+      i {
+        width: 1px;
+        height: 100%;
+        &:before {
+          left: -2px;
+          top: -2px;
+        }
+        &:after {
+          left: -2px;
+          bottom: -2px;
+        }
+      }
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+    .pw {
+      display: flex;
+      align-items: flex-start;
+    }
+    .splite {
+      max-width: 250px;
+      min-width: 13%;
+      margin-top: 5%;
+      i {
+        width: 100%;
+        height: 1px;
+        &:before {
+          left: -2px;
+          top: -2px;
+        }
+        &:after {
+          right: -2px;
+          top: -2px;
+        }
+      }
+    }
+    .profile {
+      margin: 0;
+      min-width: 28%;
+      margin-right: 15px;
+    }
+    .cnt {
+      text-align: left;
+      flex-grow: 1;
+      padding-top: 0;
+      padding-left: 35px;
+      margin-top: 5%;
+    }
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+    .cnt {
+      h2 {
+        font-size: 2.5em;
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding: 45px 0;
+  }
+}

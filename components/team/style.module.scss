@@ -1,0 +1,52 @@
+@import '../../styles/vars.scss';
+
+.team {
+  padding-bottom: 25px;
+  picture {
+    display: block;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .content {
+    background-color: rgba($color: #313131, $alpha: 0.9);
+    padding: 15px;
+    margin-top: -35px;
+    position: relative;
+    h3 {
+      font-size: 1.5em;
+      text-align: center;
+      font-weight: 100;
+      a {
+        color: #074DD9;
+      }
+    }
+  }
+  @include m-size(sm) {
+    
+  }
+  @include m-size(md) {
+    .content {
+      h3 {
+        font-size: 2em;
+      }
+    }
+  }
+  @include m-size(lg) {
+    padding-bottom: 40px;
+    .content {
+      padding: 20px 6%;
+      margin-top: -45px;
+      h3 {
+        font-size: 2.2em;
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding-bottom: 50px;
+    .content {
+      margin-top: -50px;
+    }
+  }
+}

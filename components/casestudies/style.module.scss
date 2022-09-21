@@ -1,0 +1,195 @@
+@import '../../styles/vars.scss';
+
+.casestudies {
+  padding: 25px 0;
+  h3 {
+    color: $color-text;
+    text-align: center;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+  }
+  .wrap {
+    position: relative;
+  }
+  .box {
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.15);
+    border-bottom-right-radius: 4em;
+    figure {
+      margin-bottom: 1.2em;
+      position: relative;
+      &:before {
+        content: '';
+        display: block;
+        padding-bottom: 66%;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    h3 {
+      font-size: 1.1em;
+      margin-bottom: 0.8em;
+      color: $color-text;
+    }
+    p {
+      font-size: 0.9em;
+      margin-bottom: 0;
+    }
+    .cnt {
+      overflow: hidden;
+      height: 8.5em;
+      margin-bottom: 1.5em;
+    }
+  }
+  .whyWrap {
+    display: flex;
+    align-items: center;
+    .why {
+      width: 25%;
+      figure {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url(./img/Polygon.svg) no-repeat center;
+        background-size: contain;
+        h5 {
+          color: $color-text;
+          margin: 0;
+          font-weight: bold;
+        }
+        &:before {
+          content: '';
+          display: block;
+          padding-bottom: 92%;
+        }
+      }
+    }
+    .list {
+      width: 75%;
+      padding-left: 5%;
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .box2 {
+        display: inline-flex;
+        width: 45%;
+        padding: 1em 0;
+        align-items: center;
+        p {
+          font-size: 0.9em;
+          margin-bottom: 0;
+        }
+        figure {
+          min-width: 5em;
+          max-width: 5em;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: url(./img/Polygon.svg) no-repeat center;
+          background-size: contain;
+          margin-right: 1em;
+          img {
+            max-width: 55%;
+            max-height: 55%;
+          }
+          &:before {
+            content: '';
+            display: block;
+            padding-bottom: 92%;
+          }
+        }
+      }
+    }
+  }
+  :global(.swiper-button-next) {
+    right: 20px;
+    &:before, &:after {
+      content: "\e916";
+      backface-visibility: hidden;
+    }
+    &:before {
+      animation: nextBefore 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+      animation-iteration-count: infinite;
+    }
+    &:after {
+      animation: nextAfter 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+      animation-iteration-count: infinite;
+    }
+  }
+  :global(.swiper-button-prev) {
+    left: 20px;
+    &:before, &:after {
+      content: "\e917";
+      backface-visibility: hidden;
+    }
+    &:before {
+      animation: prevBefore 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+      animation-iteration-count: infinite;
+    }
+    &:after {
+      animation: prevAfter 2s cubic-bezier(0.71, 0.04, 0.16, 1.4);
+      animation-iteration-count: infinite;
+    }
+  }
+  :global(.swiper-button-next), :global(.swiper-button-prev) {
+    top: 34%;
+    display: flex;
+    align-items: center;
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &:before, &:after {
+      font-weight: 100;
+    }
+  }
+  @include m-size(md) {
+    :global(.swiper-button-next), :global(.swiper-button-prev) {
+      top: 50%;
+    }
+    :global(.swiper-button-prev) {
+      left: -0.5em;
+    }
+    :global(.swiper-button-next) {
+      right: -0.5em;
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+    :global(.swiper-button-prev), :global(.swiper-button-next) {
+      font-size: 6em;
+    }
+  }
+  @include m-size(xl) {
+    padding: 45px 0;
+  }
+}
+
+@keyframes prevAfter {
+  0% { transform: translateX(40%);opacity: 0; }
+  50%, 100% { transform: translateX(0%);opacity: 1; }
+}
+@keyframes prevBefore {
+  0% { transform: translateX(0%);opacity: 1; }
+  50%, 100% { transform: translateX(-40%);opacity: 0; }
+}
+@keyframes nextAfter {
+  0% { transform: translateX(-40%);opacity: 0; }
+  50%, 100% { transform: translateX(0%);opacity: 1; }
+}
+@keyframes nextBefore {
+  0% { transform: translateX(0%);opacity: 1; }
+  50%, 100% { transform: translateX(40%);opacity: 0; }
+}

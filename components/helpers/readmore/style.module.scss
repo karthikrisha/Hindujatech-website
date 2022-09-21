@@ -1,0 +1,54 @@
+@import '@styles/vars.scss';
+
+.simpletext {
+  .disc1 {
+    margin-bottom: 2em;
+  }
+  h4 {
+    margin-bottom: 2em;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .extra {
+    padding-top: 0.8em;
+  }
+  .readmore {
+    font-weight: bold;
+    color: $color-orange;
+    margin-left: 0.3em;
+    cursor: pointer;
+    transition: opacity 0.5s;
+    display: inline-block;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .disc2 {
+    background-color: rgba($color: #fff, $alpha: 0.1);
+    padding: 1.5em;
+    h3 {
+      color: $color-text;
+      text-align: center;
+      margin-bottom: 0.4em;
+      font-weight: bold;
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+    .grids {
+      flex-direction: row;
+      .grid {
+        margin-right: 3em;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+  }
+  @include m-size(xl) {
+    padding: 45px 0;
+  }
+}

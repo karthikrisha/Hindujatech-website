@@ -1,0 +1,34 @@
+@import '@styles/vars.scss';
+
+.textonly {
+  padding: 20px 0;
+  .center {
+    text-align: center;
+  }
+  .right {
+    text-align: right;
+  }  
+  ul {
+    margin-left: 2em;
+    margin-bottom: 1.5em;
+    li {
+      margin-bottom: 0.3em;
+    }
+  }
+  h3 {
+    color: $color-text;
+    margin-bottom: 0.4em;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 1.4em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include m-size(xl) {
+    img {
+      max-width: 80%;
+    }
+  }
+}

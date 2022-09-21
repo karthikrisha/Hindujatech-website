@@ -1,0 +1,251 @@
+@import '@styles/vars.scss';
+
+.simpletabcontent {
+  padding: 25px 0;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  > figure {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    em {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &:before, &:after {
+        content: '';
+        height: 30%;
+      }
+      &:before {
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+      }
+      &:after {
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+      }
+    }
+  }
+  :global(.container) {
+    position: relative;
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+  }
+  @include m-size(xl) {
+    padding: 45px 0;
+  }
+}
+.tabs {
+  display: flex;
+  font-weight: bold;
+  position: relative;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  padding-bottom: 10px;
+  overflow: auto;
+  @include m-size(lg) {
+    overflow: initial;
+  }
+  span {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0.6em 0.5em;
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+    transition: color 0.7s, background-color 0.7s;
+    background-color: #3E3E3E;
+    flex-grow: 1;
+    margin-right: 10px;
+    white-space: nowrap;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+      background-color: $color-text;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      height: 3px;
+      margin-top: 4px;
+      background-color: $color-orange;
+      width: 100%;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    &:hover {
+      color: #000;
+      background-color: $color-text;
+    }
+    &.active {
+      color: #000;
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+.tabContents {
+  > div > div {
+    animation: easeInDiv 0.5s ease-in-out;
+  }
+  h3 {
+    color: $color-text;
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    em {
+      font-style: normal;
+      color: #FF0000;
+    }
+  }
+  figure {
+    margin: 0;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .tabContent {
+    &.sc {
+      figure {
+        margin-bottom: 30px;
+      }
+      .tc {
+        h5 {
+          background-color: #5D94FE;
+          display: table;
+          font-weight: 800;
+          font-size: 1.1em;
+          padding: 0.2em 3em 0.2em 1em;
+        }
+        > div {
+          background-color: #292929;
+          padding: 1.5em 1.5em;
+          ul {
+            margin-left: 1em;
+            li {
+              margin-bottom: 1.2em;
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+      @include m-size(lg) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        figure {
+          width: 55%;
+          margin-bottom: 0;
+        }
+        .tc {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+.gridsWrap {
+  overflow: hidden;
+}
+.grids {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1.2%;
+  margin-right: -1.2%;
+  .grid {
+    background-color: #1a1a1a;
+    width: 48%;
+    margin: 0% 0.6% 2% 1.2%;
+    text-align: center;
+    padding: 1em 1.5em 1.5em 1.5em;
+    margin-bottom: 2%;
+    min-height: 13.3em;
+    transition: background-color 1s;
+    position: relative;
+    &:before {
+      content: '';
+      height: 6px;
+      border-radius: 3px;
+      background-color: $color-orange;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      transform: scaleX(0);
+      transition: transform 1s;
+      transform-origin: 0% 50%;
+    }
+    &:hover {
+      background-color: #333333;
+      &:before {
+        transform: scaleX(1);
+      }
+      p b {
+        color: $color-orange;
+      }
+    }
+    p {
+      margin: 0;
+      b {
+        color: $color-text;
+        display: block;
+        font-size: 2em;
+        margin-bottom: 0.2em;
+        transition: color 1s;
+      }
+    }
+  }
+  @include m-size(md) {
+    .grid {
+      width: 31.4%;
+    }
+  }
+  @include m-size(lg) {
+    .grid {
+      width: 23.1%;
+    }
+  }
+  @include m-size(xxl) {
+    .grid {
+      width: 18.2%;
+    }
+  }
+}
+
+@keyframes easeInDiv {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

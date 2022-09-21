@@ -1,0 +1,197 @@
+@import '@styles/vars.scss';
+
+.simpletextgrid {
+  padding: 25px 0;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  > figure {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    em {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &:before, &:after {
+        content: '';
+        height: 30%;
+      }
+      &:before {
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+      }
+      &:after {
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+      }
+    }
+  }
+  :global(.container) {
+    position: relative;
+  }
+  .disc1 {
+    margin-bottom: 2em;
+    p {
+      margin-bottom: 1.0em;
+    }
+  }
+  .readmore {
+    font-weight: bold;
+    color: $color-orange;
+    margin-left: 0.3em;
+    cursor: pointer;
+    transition: opacity 0.5s;
+    display: inline-block;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .content {
+    background-color: rgba($color: #fff, $alpha: 0.1);
+    padding: 1.5em;
+    h3 {
+      color: $color-text;
+      text-align: center;
+      margin-bottom: 0.4em;
+      font-weight: bold;
+    }
+    p {
+      margin-bottom: 1.5em;
+    }
+  }
+  .grid {
+    list-style: none;
+    h5 {
+      color: $color-text;
+      font-size: 1.1em;
+      margin-bottom: 1em;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        left: -0.5em;
+        top: -0.1em;
+        bottom: -0.1em;
+        width: 2px;
+        background-color: $color-orange;
+      }
+    }
+    p {
+      margin-bottom: 0;
+    }
+    li {
+      position: relative;
+      padding-bottom: 2em;
+      margin-bottom: 2em;
+      &:after {
+        content: '';
+        height: 2px;
+        background-color: #fff;
+        opacity: 0.33;
+        width: 95%;
+        position: absolute;
+        left: 2.5%;
+        bottom: 0;
+      }
+    }
+  }
+  @include m-size(sm) {
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 1.5em;
+      li {
+        width: 48%;
+        padding: 0em 1em 1.5em 1em;
+        margin-right: 4%;
+        &:before {
+          content: '';
+          height: 90%;
+          background-color: #fff;
+          opacity: 0.33;
+          width: 2px;
+          position: absolute;
+          top: 0%;
+          left: -4%;
+        }
+        &:nth-child(2n+1) {
+          &:before {
+            display: none;
+          }
+        }
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+        &:nth-last-child(1), &:nth-last-child(2) {
+          margin-bottom: 0;
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+    .grid {
+      li {
+        width: 30.6%;
+        padding: 0em 1em 2em 1em;
+        &:before {
+          left: -6%;
+        }
+        &:nth-child(2n) {
+          margin-right: 4%;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        &:nth-child(2n+1) {
+          &:before {
+            display: block;
+          }
+        }
+        &:nth-child(3n+1) {
+          &:before {
+            display: none;
+          }
+        }
+        &:nth-last-child(3) {
+          margin-bottom: 0;
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+  }
+  @include m-size(xl) {
+    padding: 45px 0;
+  }
+}

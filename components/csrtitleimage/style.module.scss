@@ -1,0 +1,69 @@
+@import '../../styles/vars.scss';
+
+.Titleandimage {
+  :global(.container) {
+    position: relative;
+  }
+  h3 {
+    font-size: 1.5em;
+    font-weight: 400;
+    text-align: center;
+  }
+  p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    strong {
+      font-size: 1.4em;
+    }
+    em {
+      color: #edab1f;
+    }
+  }
+  .content {
+    padding: 25px 0;
+  }
+  figure {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  @include m-size(md) {
+    :global(.container) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h3 {
+      text-align: left;
+    }
+    .content {
+      padding: 35px 0;
+      width: 35%;
+    }
+    figure {
+      width: 60%;
+    }
+  }
+  @include m-size(lg) {
+    h3 {
+      font-size: 2em;
+    }
+  }
+  @include m-size(xl) {
+    .content {
+      padding: 40px 0;
+    }
+  }
+  @include m-size(xl) {
+    h3 {
+      font-size: 2.5em;
+    }
+    .content {
+      width: 30%;
+    }
+    figure {
+      width: 65%;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import '@styles/vars.scss';
+
+.imgminilist {
+  padding: 20px 0;
+  
+  .content {
+    figure {
+      display: block;
+      line-height: 1;
+      width: 100%;
+      border: 2px solid #323232;
+      background-color: rgba($color: #fff, $alpha: 0.05);
+      padding: 0.9em;
+      border-radius: 0.9em
+    }
+  }
+  @include m-size(lg) {
+    .content {
+      figure {
+        width: 97%;
+      }
+    }
+  }
+}

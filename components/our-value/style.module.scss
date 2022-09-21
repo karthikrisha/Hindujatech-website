@@ -1,0 +1,112 @@
+@import '../../styles/vars.scss';
+
+.ourValue {
+  padding: 25px 0;
+  background: url(./img/bg.png) no-repeat center;
+  background-size: cover;
+  .wrap {
+    .content {
+      text-align: center;
+      margin-bottom: 30px;
+      h2 {
+        font-size: 1.8em;
+        margin-bottom: 0.2em;
+      }
+    }
+    figure {
+      margin: 0 auto;
+      width: 80%;
+      position: relative;
+      z-index: 0;
+      max-width: 470px;
+      &:after {
+        content: '';
+        display: block;
+        padding-bottom: 98%;
+        background: url(./img/s-bg.svg) no-repeat center;
+        background-size: contain;
+        position: relative;
+      }
+      i {
+        position: absolute;
+        animation: setting 20s linear infinite;
+        &:after {
+          content: '';
+          display: block;
+          padding-bottom: 100%;
+        }
+        &:nth-child(1) {
+          width: 30.4%;
+          left: 28.4%;
+          top: 3.1%;
+          background: url(./img/s-g.svg) no-repeat center;
+          background-size: contain;
+          animation-duration: 12.8s;
+        }
+        &:nth-child(2) {
+          width: 48.1%;
+          left: 5.5%;
+          top: 27.3%;
+          background: url(./img/s-b.svg) no-repeat center;
+          background-size: contain;
+          animation-direction: reverse;
+        }
+        &:nth-child(3) {
+          width: 50.6%;
+          left: 43.6%;
+          top: 48.5%;
+          background: url(./img/s-o.svg) no-repeat center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+  @include m-size(md) {
+  }
+  @include m-size(maxlg) {
+    .wrap {
+      .content {
+        text-align: center;
+        h2 {
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @include m-size(lg) {
+    .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      figure {
+        max-width: 800px;
+        width: 55%;
+        margin: 0;
+      }
+      .content {
+        text-align: left;
+        max-width: 300px;
+        margin-bottom: 0;
+        h2 {
+         font-size: 2.5em;
+         font-weight: normal;
+        }
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding: 60px 0;
+  }
+  @include m-size(xxl) {
+    padding: 80px 0;
+  }
+  @include m-size(xxxl) {
+    padding: 100px 0;
+  }
+}
+
+@keyframes setting {
+  100% { transform: rotate(360deg); }
+}

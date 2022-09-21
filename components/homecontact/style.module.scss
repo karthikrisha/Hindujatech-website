@@ -1,0 +1,70 @@
+@import '@styles/vars.scss';
+
+.homeContact {
+  padding: 25% 0;
+  position: relative;
+  background: url(./img/bg.jpg) no-repeat center;
+  background-size: cover;
+  color: #232323;
+  h3 {
+    color: $color-green-dark;
+    margin-bottom: 0.9em;
+    span {
+      color: red;
+    }
+  }
+  p {
+    font-size: 1em;
+    margin-bottom: 1.9em;
+    span {
+      color: red;
+    }
+  }
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    em {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &:before, &:after {
+        content: '';
+        height: 20%;
+      }
+      &:before {
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+      }
+      &:after {
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+      }
+    }
+  }
+  @include m-size(md) {
+    padding: 18% 0;
+    p {
+      font-size: 1.3em;
+    }
+  }
+  @include m-size(lg) {
+    padding: 16% 0;
+  }
+  @include m-size(xl) {
+    padding: 12% 0 16% 0;
+  }
+  @media only screen and (min-width: 1500px) {
+    
+  }
+  @include m-size(xxxl) {
+    
+  }
+}

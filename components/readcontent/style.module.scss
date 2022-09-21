@@ -1,0 +1,65 @@
+@import '../../styles/vars.scss';
+
+.readcontent {
+  padding: 25px 0;
+  .row {
+    position: relative;
+    padding: 1.5em 2em;
+    background-color: #262626;
+    margin-bottom: 3em;
+    &:before {
+      content: '';
+      width: 0.4em;
+      position: absolute;
+      left: -0.4em;
+      top: 0;
+      bottom: 0;
+      border-radius: 0.2em;
+      background: linear-gradient(to bottom, #ff6b09 0%,#ffa800 100%);
+      z-index: 2;
+    }
+    h3 {
+      color: $color-text;
+      font-weight: 400;
+      font-size: 1.35em;
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+      small {
+        display: block;
+        color: #fff;
+        font-size: 1em;
+        padding-top: 0.2em;
+      }
+    }
+  }
+  .row2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    p {
+      font-size: 1.35em;
+      border-radius: 2em;
+      border: 1px solid $color-orange;
+      padding: 10px 10px 10px 15px;
+    }
+    a {
+      padding: 0.2em 0.7em;
+      background-color: #262626;
+      text-decoration: underline;
+      display: inline-block;
+      color: $color-text;
+      border-radius: 2em;
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+  }
+  @include m-size(xl) {
+    padding: 45px 0;
+  }
+}

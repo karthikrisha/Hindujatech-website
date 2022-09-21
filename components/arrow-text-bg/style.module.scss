@@ -1,0 +1,102 @@
+@import '../../styles/vars.scss';
+
+.arrowTextbg {
+  position: relative;
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./img/bg.png) no-repeat center;
+    background-size: 100% auto;
+    opacity: 0.5;
+  }
+  p {
+    font-size: 1.25em;
+  }
+  .wrap {
+    background-color: #313131;
+    padding: 20px;
+    position: relative;
+  }
+  .twq {
+    position: relative;
+    padding: 10px 30px;
+    a {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background-color: $color-orange2;
+      width: 150px;
+    }
+    &:before {
+      left: 0;
+      top: 0;
+    }
+    &:after {
+      right: 0;
+      bottom: 0;
+    }
+    em {
+      &:before, &:after {
+        content: '';
+        position: absolute;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: 28px solid $color-orange2;
+        border-right: 28px solid transparent;
+      }
+      &:after {
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 28px solid $color-orange2;
+        border-left: 28px solid transparent;
+      }
+    }
+  }
+  @include m-size(lg) {
+    .twq {
+      padding: 15px 43px;
+      &:before, &:after {
+        width: 250px;
+      }
+      em {
+        &:before {
+          border-top: 48px solid $color-orange2;
+          border-right: 42px solid transparent;
+        }
+        &:after {
+          border-bottom: 48px solid $color-orange2;
+          border-left: 42px solid transparent;
+        }
+      }
+    }
+  }
+  @include m-size(xl) {
+    .wrap {
+      padding: 20px 25px;
+      width: 85%;
+      margin: 0 auto;
+    }
+    .twq {
+      padding: 25px 60px;
+      &:before, &:after {
+        width: 350px;
+      }
+    }
+  }
+}

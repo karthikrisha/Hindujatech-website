@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../public/font/icomoon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"], .font-icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+
+  .icon-Brightness:before {
+    content: "\e91c";
+  }
+  .icon-Hibernate:before {
+    content: "\e91d";
+  }
+  .icon-noun-night-1:before {
+    content: "\e91e";
+  }
+  .icon-right-arrow-3:before {
+    content: "\e916";
+  }
+  .icon-left-arrow-3:before {
+    content: "\e917";
+  }
+  .icon-right-arrow:before {
+    content: "\e914";
+  }
+  .icon-left-arrow:before {
+    content: "\e915";
+  }
+  .icon-mic:before {
+    content: "\e90d";
+  }
+  .icon-close-1:before {
+    content: "\e90e";
+  }
+  .icon-search:before {
+    content: "\e90b";
+  }
+  .icon-polygon:before {
+    content: "\e902";
+  }
+  .icon-instagram:before {
+    content: "\e903";
+  }
+  .icon-youtube:before {
+    content: "\e904";
+  }
+  .icon-linkedin:before {
+    content: "\e905";
+  }
+  .icon-twitter:before {
+    content: "\e906";
+  }
+  .icon-facebook:before {
+    content: "\e907";
+  }
+  .icon-left-quote:before {
+    content: "\e908";
+  }
+  .icon-right-quote:before {
+    content: "\e909";
+  }
+  .icon-link:before {
+    content: "\e90a";
+  }
+  .icon-right-arrow-2:before {
+    content: "\e900";
+  }
+  .icon-left-arrow-2:before {
+    content: "\e901";
+  }
+  .icon-lang:before {
+    content: "\e91b";
+  }
+  .icon-thin-down:before {
+    content: "\e918";
+  }
+  .icon-phone-2:before {
+    content: "\e90f";
+  }
+  .icon-phone:before {
+    content: "\e910";
+  }
+  .icon-mail:before {
+    content: "\e911";
+  }
+  .icon-location:before {
+    content: "\e912";
+  }
+  .icon-building:before {
+    content: "\e913";
+  }
+  .icon-close-2:before {
+    content: "\e90c";
+  }
+  .icon-earth-2:before {
+    content: "\e91a";
+  }
+  .icon-earth:before {
+    content: "\e9ca";
+  }
+  .icon-language:before {
+    content: "\e919";
+  }
+  

@@ -1,0 +1,120 @@
+@import '../../styles/vars.scss';
+
+.csrtext {
+  padding: 25px 0;
+  h3 {
+    font-size: 1.5em;
+    color: $color-yellow;
+    margin-bottom: 0.3em;
+    text-align: center;
+    font-weight: 400;
+  }
+  h4 {
+    font-size: 1.5em;
+    margin-bottom: 0.4em;
+    font-weight: 400;
+  }
+  p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    strong {
+      font-size: 1.4em;
+    }
+    em {
+      color: #edab1f;
+    }
+  }
+  &.style2 {
+    background-color: #313131;
+    .twq {
+      position: relative;
+      padding: 10px 30px;
+      a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        background-color: $color-orange2;
+        width: 150px;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+      }
+      &:after {
+        right: 0;
+        bottom: 0;
+      }
+      em {
+        &:before, &:after {
+          content: '';
+          position: absolute;
+        }
+        &:before {
+          left: 0;
+          top: 0;
+          width: 0;
+          height: 0;
+          border-top: 28px solid $color-orange2;
+          border-right: 28px solid transparent;
+        }
+        &:after {
+          right: 0;
+          bottom: 0;
+          width: 0;
+          height: 0;
+          border-bottom: 28px solid $color-orange2;
+          border-left: 28px solid transparent;
+        }
+      }
+    }
+  }
+  @include m-size(md) {
+    background-size: auto 100%;
+    .content {
+      margin-left: 42%;
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+    h3, h4 {
+      font-size: 2em;
+    }
+    &.style2 {
+      .twq {
+        padding: 15px 43px;
+        &:before, &:after {
+          width: 250px;
+        }
+        em {
+          &:before {
+            border-top: 58px solid $color-orange2;
+            border-right: 52px solid transparent;
+          }
+          &:after {
+            border-bottom: 58px solid $color-orange2;
+            border-left: 52px solid transparent;
+          }
+        }
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+  }
+  @include m-size(xl) {
+    &.style2 {
+      .twq {
+        &:before, &:after {
+          width: 350px;
+        }
+      }
+    }
+  }
+}

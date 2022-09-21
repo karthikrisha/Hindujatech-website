@@ -1,0 +1,29 @@
+$color-orange: #FC8701;
+$color-orange2: #ba7635;
+$color-text: #FECB85;
+$color-yellow: #fcad08;
+$color-blue: #074DD9;
+$color-green: #6EFF00;
+$color-green-dark: #318014;
+$color-blue: #074DD9;
+$color-lite-dark: #262626;
+
+@mixin m-size($size) {
+  @if $size == sm {
+    @media only screen and (min-width: 540px) { @content; }
+  } @else if $size == md {
+    @media only screen and (min-width: 768px) { @content; }
+  } @else if $size == maxlg {
+    @media only screen and (max-width: 991px) { @content; }
+  } @else if $size == lg {
+    @media only screen and (min-width: 992px) { @content; }
+  } @else if $size == xl {
+    @media only screen and (min-width: 1200px) { @content; }
+  } @else if $size == xxl {
+    @media only screen and (min-width: 1600px) { @content; }
+  } @else if $size == xxxl {
+    @media only screen and (min-width: 1800px) { @content; }
+  } @else if $size == xmd {
+    @media only screen and (max-width: 767px) { @content; }
+  }
+}

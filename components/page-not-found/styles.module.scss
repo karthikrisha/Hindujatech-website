@@ -1,0 +1,62 @@
+@import '@styles/vars.scss';
+
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('./img/404.jpg') no-repeat center;
+  background-size: cover;
+  .content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-size: 13px;
+    color: #000;
+    @include m-size(sm) {
+      font-size: 15px;
+    }
+    @include m-size(md) {
+      font-size: 16px;
+    }
+    @include m-size(lg) {
+      font-size: 17px;
+    }
+    @include m-size(xl) {
+      font-size: 18px;
+    }
+    @include m-size(xxl) {
+      font-size: 20px;
+    }
+    img {
+      width: 24em;
+    }
+    > div {
+      width: 18em;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  h2 {
+    font-size: 8em;
+    font-weight: 800;
+    line-height: 0.8;
+    margin: 0 0 0.1em 0;
+    // color: $color-orange;
+  }
+  p {
+    font-size: 0.85em;
+    margin-bottom: 0.5em;
+  }
+  a {
+    margin-top: 2em;
+  }
+}
+@include m-size(md) {
+  .notFound {
+    font-size: 0.9em;
+  }
+}

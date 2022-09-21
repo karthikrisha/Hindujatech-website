@@ -1,0 +1,209 @@
+@import '@styles/vars.scss';
+
+.brochuresForm {
+  background: url('./img/bg.jpg') no-repeat center top;
+  background-size: 100% auto;
+  padding: 20% 0% 6% 0%;
+  @include m-size(lg) {
+    padding: 10% 0% 6% 0%;
+  }
+}
+.brochuresformWrap {
+  color: #ccc;
+  max-width: 920px;
+  margin: 0 auto;
+  .center {
+    h1 {
+      text-align: center;
+      color: $color-text;
+      margin-bottom: 0.7em;
+      padding-bottom: 0.6em;
+      margin-left: 10%;
+      margin-right: 10%;
+      font-weight: bold;
+      border-bottom: 3px solid $color-orange;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 0em;
+    }
+  }
+  .error {
+    color: red;
+  }
+  .lr {
+    padding-top: 8%;
+    .left {
+      margin-bottom: 30px;
+      .action {
+        margin-top: 1em;
+      }
+      h3 {
+        color: $color-text;
+        margin-bottom: 0.8em;
+        font-size: 1.2em;
+      }
+      p {
+        margin-bottom: 1.5em;
+        position: relative;
+        padding-left: 1.4em;
+        &:before {
+          content: "\e902";
+          font-family: 'icomoon' !important;
+          color: $color-orange;
+          font-size: 0.7em;
+          position: absolute;
+          left: 0;
+          top: 0.3em;
+        }
+      }
+    }
+    .right {
+      background: #1f1f1f;
+      padding: 1.5em;
+      h3 {
+        color: $color-text;
+        margin-bottom: 0.2em;
+        font-size: 1.4em;
+        text-align: center;
+      }
+      h3 + p {
+        text-align: center;
+        font-size: 0.8em;
+        margin-bottom: 1.5em;
+      }
+      .pp {
+        font-size: 0.7em;
+        margin-bottom: 2em;
+        a {
+          color: $color-text;
+        }
+      }
+      :global(.btn) {
+        width: 100%;
+        border-radius: 1.5em;
+      }
+    }
+  }
+  @include m-size(md) {
+    .lr {
+      display: flex;
+      justify-content: space-between;
+      .left {
+        width: 40%;
+        margin-bottom: 0;
+      }
+      .right {
+        width: 45%;
+      }
+    }
+  }
+  
+}
+
+
+.inputField {
+  border: 1px solid #fff;
+  position: relative;
+  margin-bottom: 1em;
+  margin-bottom: 2.3em;
+  @include m-size(lg) {
+    margin-bottom: 1.7em;
+  }
+  /* Error msg */
+  > span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 4px 5px;
+    background-color: #ffecec;
+    color: red;
+    font-size: 13px;
+    border-left: 3px solid red;
+    pointer-events: none;
+    z-index: 1;
+    line-height: 1;
+  }
+  /* Error msg */
+  > span {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    padding: 4px 5px;
+    background-color: #ffecec;
+    color: red;
+    font-size: 13px;
+    border-left: 3px solid red;
+    pointer-events: none;
+    z-index: 1;
+  }
+  input, textarea, select {
+    font-family: inherit;
+    font-size: 1em;
+    color: #ffffff;
+    border: none;
+    background: #1f1f1f;
+    display: block;
+    resize: none;
+    width: 100%;
+    padding: 0.7em 0.8em;
+    font-size: 0.9em;
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+  textarea {
+    height: 6em;
+  }
+  &.selectField {
+    &:after {
+      font-family: 'icomoon';
+      background-color: #1f1f1f;
+      content: '\e918';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1.8em;
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+    }
+  }
+}
+.inputFile {
+  position: relative;
+  border: 1px solid transparent;
+  margin-bottom: 1.7em;
+  margin-top: 0.8em;
+  color: $color-text;
+  > div {
+    padding: 0.8em 1.5em 0.7em 1.5em;
+  }
+  span {
+    color: #fff;
+    opacity: 0.57;
+    padding-left: 1.5em;
+  }
+  em {
+    font-style: normal;
+    padding-left: 1.5em;
+    opacity: 0.57;
+    color: red;
+  }
+  input {
+    opacity: 0;
+    border: none;
+    background: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+}

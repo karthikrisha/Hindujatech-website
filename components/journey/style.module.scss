@@ -1,0 +1,323 @@
+@use "sass:math";
+@import "../../styles/vars.scss";
+
+.journey {
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    i {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 300%;
+      background: url(./img/repeat.png) repeat left top;
+      background-size: 4em auto;
+      opacity: 0.15;
+    }
+    em {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &:before,
+      &:after {
+        content: "";
+        height: 10%;
+      }
+      &:before {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+      &:after {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 100%
+        );
+      }
+    }
+  }
+  :global(.container) {
+    position: relative;
+  }
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 0.3em;
+    color: $color-text;
+    font-weight: 800;
+  }
+  p {
+    font-size: 1.2em;
+    span {
+      color: $color-text;
+    }
+  }
+  $s-w: 3.36;
+  $s-h: 2.9;
+  $s-c: #fff;
+  .box {
+    text-align: left;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    will-change: transform;
+    > div {
+      padding-left: 0.4em;
+      will-change: transform, opacity;
+    }
+    &:nth-child(2n + 1) {
+      i b:before {
+        border-left: math.div($s-w, 2) * 1em solid transparent;
+        border-right: math.div($s-w, 2) * 1em solid transparent;
+        border-bottom: $s-h + em solid $s-c;
+      }
+    }
+    &:nth-child(2n + 2) {
+      i b:before {
+        border-left: math.div($s-w, 2) * 1em solid transparent;
+        border-right: math.div($s-w, 2) * 1em solid transparent;
+        border-top: $s-h + em solid $s-c;
+      }
+    }
+    i {
+      width: $s-w + em;
+      height: $s-h + em;
+      b {
+        display: block;
+        &:before {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0;
+          transition: border-color 0.5s ease-in-out;
+        }
+      }
+    }
+    h4 {
+      font-weight: 600;
+      color: $color-text;
+      line-height: 0.8;
+      margin-bottom: 0.3em;
+      min-height: 0.8em;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+  .wrap {
+    margin-top: 30px;
+    .box {
+      &:nth-child(2n + 1) {
+        i b:before {
+          border-bottom-color: #fff;
+        }
+      }
+      &:nth-child(2n + 2) {
+        i b:before {
+          border-top-color: #fff;
+        }
+      }
+    }
+  }
+  .action {
+    display: flex;
+    padding-top: 2.5em;
+    justify-content: center;
+  }
+  @include m-size(sm) {
+    .box {
+      font-size: 1.4em;
+    }
+  }
+  @include m-size(md) {
+    padding: 40px 0;
+    .wrap {
+      margin-top: 40px;
+    }
+    .list {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .box {
+      font-size: 1.6em;
+      width: 50%;
+    }
+  }
+  @include m-size(lg) {
+    .bg {
+      i {
+        background-size: 6em auto;
+      }
+    }
+    .action {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    .animate + .action {
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+      transition-delay: 2s;
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    .list {
+      position: relative;
+      z-index: 1;
+    }
+    .wrap {
+      position: relative;
+      > img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        width: 10em;
+        margin-left: -5em;
+        margin-top: -3em;
+        transition: transform 0.7s, opacity 0.7s;
+        z-index: 2;
+      }
+    }
+    .box {
+      font-size: 1.8em;
+      width: 33.33333333336%;
+      align-items: flex-start;
+      margin-bottom: 0em;
+      transition: transform 0.7s ease-in-out;
+      i {
+        transition: transform 0.7s ease-in-out;
+        b {
+          opacity: 0;
+          transition: opacity 0.2s ease-in-out;
+        }
+      }
+      &:nth-child(2n + 1) {
+        i b:before {
+          border-bottom-color: $color-blue;
+        }
+      }
+      &:nth-child(2n + 2) {
+        i b:before {
+          border-top-color: $color-blue;
+        }
+      }
+      &:nth-child(1),
+      &:nth-child(4) {
+        transform: translateX(150.2%);
+        i {
+          transform: translateX(-100%);
+        }
+      }
+      &:nth-child(2),
+      &:nth-child(5) {
+        transform: translateX(50%);
+        i {
+          transform: translateX(-50%);
+        }
+      }
+      &:nth-child(3),
+      &:nth-child(6) {
+        transform: translateX(-50.2%);
+      }
+      > div {
+        padding-right: 0.5em;
+        opacity: 0;
+        transition: opacity 0.7s ease-in-out;
+      }
+      p {
+        height: 2.6em;
+        overflow: hidden;
+      }
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        align-items: center;
+      }
+    }
+    .wrap {
+      &.animate {
+        .list {
+          .box {
+              transform: translateX(0%);
+              transition-delay: 0.8s;
+              backface-visibility: hidden;
+              i {
+                backface-visibility: hidden;
+                transform: translateX(0%);
+                transition-delay: 0.8s;
+                b {
+                  opacity: 1;
+                }
+              }
+              &:nth-child(3) i b {
+                transition-delay: 0.1s;
+              }
+              &:nth-child(6) i b {
+                transition-delay: 0.2s;
+              }
+              &:nth-child(5) i b {
+                transition-delay: 0.3s;
+              }
+              &:nth-child(4) i b {
+                transition-delay: 0.4s;
+              }
+              &:nth-child(1) i b {
+                transition-delay: 0.5s;
+              }
+              &:nth-child(2n + 1) {
+                i b:before {
+                  border-bottom-color: $s-c;
+                  transition-delay: 0.8s;
+                }
+              }
+              &:nth-child(2n + 2) {
+                i b:before {
+                  border-top-color: $s-c;
+                  transition-delay: 0.8s;
+                }
+              }
+              > div {
+                transition-delay: 1.3s;
+                opacity: 1;
+                backface-visibility: hidden;
+              }
+            }
+          }
+        }
+    }
+  }
+  @include m-size(xl) {
+    padding: 50px 0;
+    .box {
+      font-size: 2.2em;
+    }
+    .wrap {
+      margin-top: 50px;
+    }
+  }
+  @include m-size(xxl) {
+    .box {
+      font-size: 2.5em;
+    }
+  }
+  @include m-size(xxxl) {
+    padding: 70px 0;
+  }
+}

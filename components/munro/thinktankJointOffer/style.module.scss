@@ -1,0 +1,97 @@
+@import '@styles/vars.scss';
+.topBanner{
+  // border:  1px solid red;
+  width: 100%;
+  height: fit-content;
+  padding: 45px 0;
+
+    .content{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      //jointoffer Section 
+      .jointOfferSection{
+        margin-top: 8%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .jointOfferHeader{
+          opacity:1;
+          color:#FECB85;
+          font-size:2.2em;
+          text-align:center;
+        }
+        .jointOffersubtitle{
+          opacity:1;
+          color:#FFFFFF;
+          font-size:30px;
+          text-align:center;
+        }
+        .jointOfferDetails{
+          opacity:1;
+          color:#FFFFFF;
+          font-size:23px;
+          text-align:center;
+          margin-top: 5%;;
+        }
+      }
+      .left{
+        position: relative;
+        .header{
+          opacity:1;
+          color:#FECB85;
+          font-size:26px;
+          text-align:center;
+        }
+        .hexgonContainer{
+          width: 75%;
+          float: left;
+          position: relative;
+          .listTitle{
+            color:#FECB85;
+            font-size:20px;
+            margin-bottom: 5%;
+          }
+          ul{ 
+            list-style-position: outside;
+            li{
+              margin: 3%;
+            }
+          }
+          .execution{
+            position: absolute;
+            top: 12%;
+            left: 58%;
+          }
+          .education{
+            position: absolute;
+            top: 42%;
+            left: 77%;
+          }
+          .consulting{
+            position: absolute;
+            top: 42%;
+            left: 42%;
+          }
+          .support{
+            position: absolute;
+            top: 75%;
+            left: 62%;
+          }
+          svg{
+            path{
+            fill: rgb(105, 94, 94);
+            opacity: 0.28;
+            &:hover{
+              opacity: 1;
+              fill: #333;
+            }
+          }
+          }
+        }
+      }
+     
+    }
+}

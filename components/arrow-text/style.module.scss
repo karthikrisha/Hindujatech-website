@@ -1,0 +1,83 @@
+@import '../../styles/vars.scss';
+
+.arrowText {
+  padding: 25px 0;
+  text-align: center;
+  background-color: #313131;
+  p {
+    font-size: 1.8em;
+    color: #FDAE03;
+    span {
+      color: #fff;
+    }
+  }
+  .twq {
+    position: relative;
+    padding: 10px 30px;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background-color: $color-orange2;
+      width: 150px;
+    }
+    &:before {
+      left: 0;
+      top: 0;
+    }
+    &:after {
+      right: 0;
+      bottom: 0;
+    }
+    em {
+      &:before, &:after {
+        content: '';
+        position: absolute;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: 28px solid $color-orange2;
+        border-right: 28px solid transparent;
+      }
+      &:after {
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 28px solid $color-orange2;
+        border-left: 28px solid transparent;
+      }
+    }
+  }
+  @include m-size(lg) {
+    padding: 35px 0;
+    .twq {
+      padding: 15px 43px;
+      &:before, &:after {
+        width: 250px;
+      }
+      em {
+        &:before {
+          border-top: 58px solid $color-orange2;
+          border-right: 52px solid transparent;
+        }
+        &:after {
+          border-bottom: 58px solid $color-orange2;
+          border-left: 52px solid transparent;
+        }
+      }
+    }
+  }
+  @include m-size(xl) {
+    padding: 40px 0;
+    .twq {
+      padding: 25px 60px;
+      &:before, &:after {
+        width: 350px;
+      }
+    }
+  }
+}
